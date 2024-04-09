@@ -11,15 +11,20 @@ body {
 
 .container {
   width: 400px;
-  padding: 30px 40px;
+  padding: 10px 50px;
   margin-top: 150px;
   margin-left: 650px;
   background: white;
   border-radius: 20px;
 }
 
-.todo-app {
+.todo-list {
   width: 100%;
   background: white;
   margin: 100px auto 20px;
+}
+
+.todo-list h1 {
+  display: flex;
+  align-items: center;
 }
