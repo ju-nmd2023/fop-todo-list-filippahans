@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: lightseagreen;
+}
+
+.container {
+  width: 400px;
+  padding: 30px 40px;
+  margin-top: 150px;
+  margin-left: 650px;
+  background: white;
+  border-radius: 20px;
+}
+
+.todo-app {
+  width: 100%;
+  background: white;
+  margin: 100px auto 20px;
+}
