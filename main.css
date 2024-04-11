@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -12,8 +11,10 @@ body {
 .container {
   width: 400px;
   padding: 10px 50px;
-  margin-top: 150px;
-  margin-left: 650px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
   background: white;
   border-radius: 20px;
 }
@@ -21,10 +22,16 @@ body {
 .todo-list {
   width: 100%;
   background: white;
-  margin: 100px auto 20px;
+  margin: 20px auto;
 }
 
 .todo-list h1 {
   display: flex;
   align-items: center;
+}
+
+.add-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
