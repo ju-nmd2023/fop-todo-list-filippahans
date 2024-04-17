@@ -1,23 +1,26 @@
-const taskBox = document.getElementById("task-box");
-const addButton = document.getElementById("add-button");
-const taskList = document.getElementById("task-list");
+//DOM elements
+const taskBoxElement = document.getElementById("task-box");
+const addButtonElement = document.getElementById("add-button");
+const taskListElement = document.getElementById("task-list");
 
+//array to store the tasks
 let tasks = [];
 
+//handle when the window loads
 function onLoadHandler() {
   //loading tasks from localStorage
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
   if (storedTasks) {
-    tasks.push(...storedTasks);
+    tasks.push(...storedTasks); //pushing stored tasks into the tasks array
   }
 
-  addButton.addEventListener("click", addTask);
+  addButtonElement.addEventListener("click", addTask); //event listener to the add button
 
   renderTasks();
 }
 
 function renderTasks() {
-  taskList.innerHTML = "";
+  taskListElement.innerHTML = "";
   tasks.forEach((task, index) => {
     const listItem = document.createElement("li");
     const checkbox = document.createElement("input");
@@ -40,16 +43,16 @@ function renderTasks() {
     });
     listItem.appendChild(deleteButton);
 
-    taskList.appendChild(listItem);
+    taskListElement.appendChild(listItem);
   });
 }
 
 function addTask() {
-  let newTaskDescription = taskBox.value;
+  let newTaskDescription = taskBoxElement.value;
   const newTask = { description: newTaskDescription, done: false };
   tasks.push(newTask);
   saveTasks();
-  taskBox.value = "";
+  taskBoxElement.value = "";
 }
 
 function saveTasks() {
