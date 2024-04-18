@@ -11,16 +11,17 @@ function onLoadHandler() {
   //loading tasks from localStorage
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
   if (storedTasks) {
-    tasks.push(...storedTasks); //pushing stored tasks into the tasks array
+    tasks.push(...storedTasks); //pushing stored tasks into the tasks array, inspo from ChatGPT
   }
 
-  addButtonElement.addEventListener("click", addTask); //event listener to the add button
+  addButtonElement.addEventListener("click", addTask);
 
   renderTasks();
 }
 
 function renderTasks() {
-  taskListElement.innerHTML = "";
+  //checkbox function, inspo from ChatGPT
+  taskListElement.innerHTML = ""; //clear existing task list
   tasks.forEach((task, index) => {
     const listItem = document.createElement("li");
     const checkbox = document.createElement("input");
@@ -34,11 +35,12 @@ function renderTasks() {
     listItem.appendChild(checkbox);
     listItem.appendChild(taskDescription);
 
-    const deleteButton = document.createElement("button");
+    //delete button function
+    const deleteButton = document.createElement("button"); //delete button for each task
     deleteButton.textContent = "Delete";
     deleteButton.className = "delete-button";
     deleteButton.addEventListener("click", () => {
-      tasks.splice(index, 1);
+      tasks.splice(index, 1); //remove the task from array when delete button is clicked
       saveTasks();
     });
     listItem.appendChild(deleteButton);
@@ -47,17 +49,20 @@ function renderTasks() {
   });
 }
 
+//to add a new task
 function addTask() {
-  let newTaskDescription = taskBoxElement.value;
+  //value of the input
+  let newTaskDescription = taskBoxElement.value; //new task object
   const newTask = { description: newTaskDescription, done: false };
   tasks.push(newTask);
   saveTasks();
-  taskBoxElement.value = "";
+  taskBoxElement.value = ""; //clear the input after adding the task
 }
-
+//to save tasks to local storage
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTasks();
 }
 
+//to call onloadhandler function when the window loads
 window.addEventListener("load", onLoadHandler);

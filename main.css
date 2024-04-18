@@ -13,9 +13,9 @@ body {
   /* the box */
   width: 400px;
   padding: 10px 50px;
-  position: fixed; /* fixed position relative to viewport */
-  top: 30%; /* positioning 30% from the top */
-  left: 50%; /* positioning 30% from the left */
+  position: fixed;
+  top: 30%;
+  left: 50%;
   transform: translateX(-50%); /* centering horizontally */
   background: white;
   border-radius: 20px; /* round corners */
@@ -58,7 +58,7 @@ body {
 
 ul li {
   /* the list items styling */
-  list-style: none; /* remove the list dots */
+  list-style: none;
   padding: 10px;
   font-size: 14px;
 }
