@@ -11,7 +11,7 @@ function onLoadHandler() {
   //loading tasks from localStorage
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
   if (storedTasks) {
-    tasks.push(...storedTasks); //pushing stored tasks into the tasks array, inspo from ChatGPT
+    tasks.push(...storedTasks); //pushing stored tasks into the tasks array, inspo from ChatGPT - https://chat.openai.com/share/4328f00b-4cab-43ab-a3c9-e11455f28e83
   }
 
   addButtonElement.addEventListener("click", addTask);
@@ -20,7 +20,7 @@ function onLoadHandler() {
 }
 
 function renderTasks() {
-  //checkbox function, inspo from ChatGPT
+  //checkbox function, inspo from ChatGPT - https://chat.openai.com/share/4328f00b-4cab-43ab-a3c9-e11455f28e83
   taskListElement.innerHTML = ""; //clear existing task list
   tasks.forEach((task, index) => {
     const listItem = document.createElement("li");
